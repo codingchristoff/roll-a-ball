@@ -28,4 +28,13 @@ public class PlayerController : MonoBehaviour
         movementX = movementVector.x;
         movementY = movementVector.y;
     }   
+
+    //DETECT AND TEST COLLISIONS ON SPHERE COLLIDER
+    void OnTriggerEnter(Collider other)
+    {
+      if(other.gameObject.CompareTag("pickUp"))
+        {
+            other.gameObject.SetActive(false);
+        }            
+    }
 }
